@@ -1,0 +1,31 @@
+Router(config)#int
+Router(config)#interface fast
+Router(config)#interface fastEthernet 0/0.10
+Router(config-subif)#enc
+Router(config-subif)#encapsulation do
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip 
+Router(config-subif)#ip add
+Router(config-subif)#ip address 192.168.10.254 255.255.255.0
+Router(config-subif)#exit
+Router(config)#inter
+Router(config)#interface fas
+Router(config)#interface fastEthernet 0/0.11
+Router(config-subif)#en
+Router(config-subif)#encapsulation do
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip add
+Router(config-subif)#ip address 192.168.11.254 255.255.255.0
+Router(config-subif)#exit
+Router(config)#int
+Router(config)#interface fas
+Router(config)#interface fastEthernet 0/0.12
+Router(config-subif)#en
+Router(config-subif)#encapsulation do
+Router(config-subif)#encapsulation dot1Q 30
+Router(config-subif)#ip add
+Router(config-subif)#ip address 192.168.12.254 255.255.255.0
+Router(config-subif)#
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+****************************************(get getway address as ip address )*************************************************************

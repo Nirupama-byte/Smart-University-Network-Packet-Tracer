@@ -1,0 +1,30 @@
+Router>en
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip access-list extended BLOCK_40_42
+Router(config-ext-nacl)#deny ip 192.168.40.0 0.0.0.255 192.168.42.0 0.0.0.255
+Router(config-ext-nacl)#deny ip 192.168.42.0 0.0.0.255 192.168.40.0 0.0.0.255
+Router(config-ext-nacl)#permit ip any any
+Router(config-ext-nacl)#exit
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/1.40
+Router(config-subif)#ip access-group BLOCK_40_42 in
+Router(config-subif)#exit
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/1.42
+Router(config-subif)#ip access-group BLOCK_40_42 in
+Router(config-subif)#exit
+Router(config)#wr
+               ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+wr
+Building configuration...
+[OK]
+Router#
+Router#
